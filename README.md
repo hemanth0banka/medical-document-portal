@@ -45,7 +45,7 @@ git clone https://github.com/hemanth0banka/medical-document-portal.git
 
 1. Navigate to the backend folder:
 ```
-cd backend
+cd server
 ```
 
 2. Install dependencies:

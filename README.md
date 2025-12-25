@@ -55,12 +55,12 @@ npm install
 
 3. Create .env file, Add your environment variables:
 
-port = port number
-db_name = database name
-db_username = database username
-db_password = database password
-host = '127.0.0.1'
-dialect = 'mysql'
+- port = port number
+- db_name = database name
+- db_username = database username
+- db_password = database password
+- host = '127.0.0.1'
+- dialect = 'mysql'
 
 4. Start the backend server:
 
@@ -85,7 +85,7 @@ npm install
 
 3. Create .env file, Add your environment variables:
 
-VITE_apiUrl = url for backend
+VITE_apiUrl = url for backend ('http://localhost:1000')
 
 4. Start the frontend development server:
 

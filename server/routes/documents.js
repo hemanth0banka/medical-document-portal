@@ -1,0 +1,10 @@
+const controller = require('../controller/documents.js')
+const multer = require('multer')
+const express = require('express')
+const route = express.Router()
+const upload = multer({ dest: 'uploads' })
+route.get('/', controller.allDocuments)
+route.get('/:id', controller.download)
+route.post('/upload', upload.single('file'), controller.uploadDocument)
+route.delete('/:id', controller.deleteDocument)
+module.exports = route

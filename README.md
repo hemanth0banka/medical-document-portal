@@ -98,26 +98,26 @@ npm run dev
 
 ## Example API Calls
 
-### 1. Upload a Document
+# 1. Upload a Document
 
 ```
 curl -X POST http://localhost:5000/documents/upload \
   -F "file=@file.pdf"
 ```
 
-### 2. List All Documents
+# 2. List All Documents
 
 ```
 curl http://localhost:5000/documents
 ```
 
-### 3. Download a Document
+# 3. Download a Document
 
 ```
 curl -O http://localhost:5000/documents/1
 ```
 
-### 4. Delete a Document
+# 4. Delete a Document
 
 ```
 curl -X DELETE http://localhost:5000/documents/1

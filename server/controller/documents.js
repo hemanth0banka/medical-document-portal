@@ -30,7 +30,9 @@ const download = async (req, res, next) => {
 const uploadDocument = async (req, res, next) => {
     try {
         const { filename, size, originalname, mimetype } = req.file
+        const p = path.resolve('uploads', filename)
         if (mimetype !== 'application/pdf') {
+            if (fs.existsSync(p)) fs.unlinkSync(p)
             const err = new Error('Invalid file type')
             err.statusCode = 400
             return next(err)
@@ -55,7 +57,8 @@ const deleteDocument = async (req, res, next) => {
             err.statusCode = 404
             return next(err)
         }
-        fs.unlinkSync(`uploads/${record.filename}`)
+        const p = path.resolve('uploads', record.filename)
+        if (fs.existsSync(p)) fs.unlinkSync(p)
         await record.destroy()
         res.status(200).json({
             success: true,

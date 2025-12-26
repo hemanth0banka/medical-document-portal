@@ -15,14 +15,13 @@ const allDocuments = async (req, res, next) => {
 }
 const download = async (req, res, next) => {
     try {
-        const id = req.params.id
-        const record = await document.findByPk(id)
+        const record = await document.findByPk(req.params.id)
         if (!record) {
             const err = new Error('document not found')
             err.statusCode = 404
             return next(err)
         }
-        res.download(path.resolve(record.path), `${record.originalname}.pdf`)
+        res.download(path.resolve('uploads', record.filename), record.originalname)
     }
     catch (e) {
         next(e)
@@ -30,16 +29,19 @@ const download = async (req, res, next) => {
 }
 const uploadDocument = async (req, res, next) => {
     try {
-        const { filename, size, originalname, path, mimetype } = req.file
+        const { filename, size, originalname, mimetype } = req.file
         if (mimetype !== 'application/pdf') {
             const err = new Error('Invalid file type')
             err.statusCode = 400
-            next(err)
+            return next(err)
         }
         await document.create({
-            filename, size, originalname, path
+            filename, size, originalname
         })
-        res.status(200).send('okkk')
+        res.status(201).json({
+            success: true,
+            message: 'Document Uploaded'
+        })
     }
     catch (e) {
         next(e)
@@ -47,17 +49,17 @@ const uploadDocument = async (req, res, next) => {
 }
 const deleteDocument = async (req, res, next) => {
     try {
-        const id = req.params.id
-        const record = await document.findByPk(id)
+        const record = await document.findByPk(req.params.id)
         if (!record) {
             const err = new Error('document not found')
             err.statusCode = 404
             return next(err)
         }
-        fs.unlinkSync(record.path)
+        fs.unlinkSync(`uploads/${record.filename}`)
         await record.destroy()
         res.status(200).json({
-            success: true
+            success: true,
+            message: 'Document Deleted'
         })
     }
     catch (e) {

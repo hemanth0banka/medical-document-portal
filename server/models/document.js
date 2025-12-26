@@ -14,12 +14,8 @@ const document = sequelize.define('document', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    path: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     size: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
     }
 })
 module.exports = document

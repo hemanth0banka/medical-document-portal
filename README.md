@@ -124,7 +124,8 @@ curl -X DELETE http://localhost:5000/documents/1
 ```
 
 ## Note
-
+* Frontend runs on port 5173 (Vite) 
+* Backend runs on port 3000 / env port number (Node/Express)
 * Only PDF files are supported.
 * The application assumes a single user.
 * Files are stored locally on the server.

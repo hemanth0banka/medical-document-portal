@@ -53,12 +53,12 @@ cd server
 npm install
 ```
 
-3. Create .env file, Add your environment variables:
+3. Create .env file, Add your environment variables: 
 
-- port = port number
-- db_name = database name
-- db_username = database username
-- db_password = database password
+- port = port number (1000)
+- db_name = database name ('mydb')
+- db_username = database username ('root')
+- db_password = database password ('1234')
 - host = '127.0.0.1'
 - dialect = 'mysql'
 

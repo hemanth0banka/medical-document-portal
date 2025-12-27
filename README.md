@@ -57,8 +57,8 @@ npm install
 
 - port = port number (1000)
 - db_name = database name ('mydb')
-- db_username = database username ('root')
-- db_password = database password ('1234')
+- db_username = database username ('username')
+- db_password = database password ('pass')
 - host = '127.0.0.1'
 - dialect = 'mysql'
 

@@ -141,5 +141,4 @@ Download process :
 * only pdf files are allowed to upload
 * files are stored locally on server, so no aws s3 used
 * application runs locally
-* no role based access control
 * given simple upload, download, and delete buttons, and no additional features are added

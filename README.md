@@ -55,7 +55,7 @@ npm install
 
 3. Create .env file, Add your environment variables: 
 
-- port = port number (1000)
+- port = 1000
 - db_name = database name ('mydb')
 - db_username = database username ('username')
 - db_password = database password ('pass')
@@ -85,7 +85,7 @@ npm install
 
 3. Create .env file, Add your environment variables:
 
-- VITE_apiUrl = url for backend ('http://localhost:1000') *** MUST match the backend server’s running port. here 1000 is just example port
+- VITE_apiUrl = 'http://localhost:1000'
 
 4. Start the frontend development server:
 
@@ -101,32 +101,32 @@ npm run dev
 #### 1. Upload a Document
 
 ```
-curl -X POST http://localhost:5000/documents/upload \
+curl -X POST http://localhost:1000/documents/upload \
   -F "file=@file.pdf"
 ```
 
 #### 2. List All Documents
 
 ```
-curl http://localhost:5000/documents
+curl http://localhost:1000/documents
 ```
 
 #### 3. Download a Document
 
 ```
-curl -O http://localhost:5000/documents/1
+curl -O http://localhost:1000/documents/1
 ```
 
 #### 4. Delete a Document
 
 ```
-curl -X DELETE http://localhost:5000/documents/1
+curl -X DELETE http://localhost:1000/documents/1
 ```
 
 ## Note
 * This is the development setup. so Backend and Frontend are runs at two different ports
 * Frontend runs on port 5173 (Vite) 
-* Backend runs on port 3000 / env port number (Node/Express)
+* Backend runs on port 1000 (Node/Express)
 * Only PDF files are supported.
 * The application assumes a single user.
 * Files are stored locally on the server.

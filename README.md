@@ -85,7 +85,7 @@ npm install
 
 3. Create .env file, Add your environment variables:
 
-- VITE_apiUrl = url for backend ('http://localhost:1000')
+- VITE_apiUrl = url for backend ('http://localhost:1000') *** MUST match the backend server’s running port. here 1000 is just example port
 
 4. Start the frontend development server:
 

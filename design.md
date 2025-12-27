@@ -136,6 +136,7 @@ Download process :
 
 ### Q6. What assumptions did you make while building this?
 
+* This project uses a development setup, where the frontend and backend run as separate services.
 * only one user is assumed,so no authention and authorization is implemented
 * only pdf files are allowed to upload
 * files are stored locally on server, so no aws s3 used
